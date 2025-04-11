@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(241, 229, 214);
+}
+
+.card-img-top {
+    height: 275px;
+}
+
+.login-btn {
+    margin-left: 10px;
+}
+
+.footer {
+    background-color: white;
+    margin-top: auto;
+    padding: 12px;
+}
+
+.login-form {
+    margin: 30px 450px;
+}
+
+.register-form {
+    margin: 0 400px;
+}
+
+.cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+}
+
+.review-box {
+    border: solid black 1px;
+}

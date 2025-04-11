@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/style.css">
+        <title>Product</title>
+    </head>
+
+    <body>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Cozybar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/product/about">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/product">Product</a>
+                </li>
+              <% if (locals.user){ %>
+                <% if (user.type == 'admin') { %>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/product/admin">Admin</a>
+                </li>
+                <% } %>
+              <% } %>
+            </ul>
+            <% if (locals.user) { %>
+              <div class="mx-auto text-center">
+                <p class="mb-0">Welcome <strong><%= user.username %></strong></p>
+              </div>
+            <% } %>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <div>
+              <% if (locals.user){ %>
+                <a class="btn btn-outline-primary float-left me-2" href="/order/cart">Cart</a>
+                <a class="btn btn-outline-primary float-left me-2" href="/authentication">Logout</a>
+              <% }else{ %>
+                <a class="btn btn-outline-primary float-left me-2" href="/authentication">Login</a>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </nav>
+        
+      <div class="container">
+        <br>
+        <h1>Cozybar</h1>
+        <br><br>
+
+        <img class="cover img-fluid" src="https://images.stockcake.com/public/8/6/d/86d4659b-fb86-4bf5-abd2-ec6b7ed145f2_large/cozy-coffee-shop-stockcake.jpg" alt="Cozybar">
+        <br><br><br>
+
+        <h3>About Us</h3>
+        <br>
+        <p>At Cozybar, our journey began in 2020 when two coffee-obsessed friends (and self-taught bakers) transformed a tiny storefront into a haven for thoughtful indulgence. We started with a single espresso machine and a dream: to pair specialty coffee with cakes worthy of its complexity. Each morning begins with the ritual of tasting—our baristas calibrating grinders while our bakers test butter temperatures for the flakiest croissants.</p>
+        <p>What sets us apart is our dual passion. We source coffee beans like wine grapes—prioritizing microlot Colombian beans with berry notes that dance alongside our raspberry-lemon loaf. Our pastry case reflects this same care, where classic French techniques meet playful twists (like matcha-white chocolate scones designed to pair with umami-rich Kyoto cold brew). Every item tells a story: the cinnamon roll recipe came from a customer’s grandmother, while our flourless chocolate torte was perfected during a midnight baking experiment.</p>
+        <p>Sustainability sweetens the deal. We work with local dairy farms, compost all grounds, and repurpose day-old pastries into bread pudding. But the real magic happens in the connections—the birthday celebrated with our caramel latte and passionfruit tart, or the first date that began with shared affogatos. This is where craft meets community, one perfect pairing at a time.</p>
+        <br><br>
+
+        <h3>Our Coffee and Cakes Philosophy</h3>
+        <br>
+        <p>At Cozybar, we believe coffee and cake are more than just sustenance—they’re rituals of joy. Every espresso shot is pulled with precision to highlight nuanced flavors, from the bright citrus notes of our Ethiopian single-origin to the caramel richness of our house blend. We roast in small batches to ensure peak freshness, and our baristas train for months to master milk texturing and extraction science. But perfection means nothing without warmth—that’s why we serve each cup with genuine care, whether you’re a first-time visitor or a daily regular.</p>
+        <p>Our pastries tell their own story. Made in-house each morning using European-style butter and seasonal ingredients, they’re designed to complement—not overpower—your brew. The flaky layers of our almond croissant mirror the complexity of a washed-process coffee, while our spiced carrot cake finds harmony with creamy flat whites. We prioritize local dairy and organic flour, proving indulgence can be thoughtful. Here, every bite and sip is crafted to slow time, spark conversation, and turn ordinary moments into small celebrations.</p>
+        <br><br>
+
+        <h3>Customers' Feedback</h3>
+        <br>
+
+        <section class="py-5 review-box" style="background-color: #f8f1e9;">
+            <div class="container">
+            <h2 class="text-center mb-5">What Our Customers Say</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <p class="card-text">"The honey lavender latte with a slice of their Earl Grey cake is pure magic! I come every Sunday for this perfect pairing."</p>
+                    <div class="mt-auto">
+                        <h5 class="mb-1">Sarah K.</h5>
+                        <small class="text-muted">Regular since 2021</small>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star-half-alt text-warning"></i>
+                    </div>
+                    <p class="card-text">"As a Paris-trained baker, I'm picky about croissants. Their almond version is the closest I've found to home."</p>
+                    <div class="mt-auto">
+                        <h5 class="mb-1">Pierre L.</h5>
+                        <small class="text-muted">Food critic</small>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <p class="card-text">"The baristas remember my usual order (oat cortado + passionfruit tart), making every visit feel like coming home."</p>
+                    <div class="mt-auto">
+                        <h5 class="mb-1">Maya T.</h5>
+                        <small class="text-muted">Neighborhood local</small>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+      </div>
+    </body>
+    <br><br>
+
+    <footer class="container-fluid text-center footer">
+      <a> &copy; 2025 Cozybar</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>
