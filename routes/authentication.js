@@ -88,7 +88,8 @@ router.post('/register', async function(req, res) {
 
 router.get('/logout', function(req, res){
     req.session.destroy();
-    res.redirect('/authentication')
+    res.clearCookie('connect.sid');
+    res.redirect('/authentication');
 });
 
 module.exports = router;
