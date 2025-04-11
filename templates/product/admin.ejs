@@ -30,16 +30,23 @@
                     </li>
                     <% } %>
                   <% } %>
-                  <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li> -->
                 </ul>
+                <% if (locals.user) { %>
+                  <div class="mx-auto text-center">
+                    <p class="mb-0">Welcome <strong><%= user.username %></strong></p>
+                  </div>
+                <% } %>
                 <form class="d-flex" role="search">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                <div class="login-btn">
-                  <a class="btn btn-outline-primary float-left me-2" href="/authentication">Login</a>
+                <div>
+                  <% if (locals.user){ %>
+                    <a class="btn btn-outline-primary float-left me-2" href="/order/cart">Cart</a>
+                    <a class="btn btn-outline-primary float-left me-2" href="/authentication">Logout</a>
+                  <% }else{ %>
+                    <a class="btn btn-outline-primary float-left me-2" href="/authentication">Login</a>
+                  <% } %>
                 </div>
               </div>
             </div>
