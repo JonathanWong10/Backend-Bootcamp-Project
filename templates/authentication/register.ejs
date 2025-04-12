@@ -51,34 +51,45 @@
       <div class="container">
         <h3 class="text-center">Register</h3>
         <br>
-        <div class="register-form">
-          <form action="/authentication/register" method="POST">
-              <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">Full Name</span>
-                  <input type="text" class="form-control" placeholder="Name" aria-label="name" aria-describedby="basic-addon1" name="name">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+              <div class="register-form">
+                <form action="/authentication/register" method="POST">
+
+                  <div class="input-group mb-3 flex-nowrap">
+                    <span class="input-group-text col-md-3 col-4">Full Name</span>
+                    <input type="text" class="form-control" placeholder="Name" name="name">
+                  </div>
+
+                  <div class="input-group mb-3 flex-nowrap">
+                    <span class="input-group-text col-md-3 col-4">Username</span>
+                    <input type="text" class="form-control" placeholder="Username" name="username">
+                  </div>
+                  
+                  <div class="input-group mb-3 flex-nowrap">
+                    <span class="input-group-text col-md-3 col-4">Password</span>
+                    <input type="password" class="form-control" placeholder="Password" name="password">
+                  </div>
+                  
+                  <div class="input-group mb-3 flex-nowrap">
+                    <span class="input-group-text col-md-3 col-4">Date of Birth</span>
+                    <input type="date" class="form-control" name="date">
+                  </div>
+                  
+                  <div class="input-group mb-3 flex-nowrap">
+                    <span class="input-group-text col-md-3 col-4">Address</span>
+                    <input type="text" class="form-control" placeholder="Address" name="address">
+                  </div>
+
+                  <div class="d-flex justify-content-center gap-2 mt-4">
+                    <button type="submit" class="btn btn-primary btn-sm px-3">Create Account</button>
+                    <a class="btn btn-secondary btn-sm px-3" href="/authentication">Login</a>
+                  </div>
+                </form>
               </div>
-              <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">Username</span>
-                  <input type="text" class="form-control" placeholder="Username" aria-label="username" aria-describedby="basic-addon1" name="username">
-              </div>
-              <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">Password</span>
-                  <input type="password" class="form-control" placeholder="Password" aria-label="password" aria-describedby="basic-addon1" name="password">
-              </div>
-              <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">Date of Birth</span>
-                  <input type="date" class="form-control" placeholder="" aria-label="date" aria-describedby="basic-addon1" name="date">
-              </div>
-              <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">Address</span>
-                  <input type="text" class="form-control" placeholder="Address" aria-label="address" aria-describedby="basic-addon1" name="address">
-              </div>
-              <br>
-              <div class="d-flex justify-content-center gap-2">
-                  <button type="submit" class="btn btn-primary">Create Account</button>
-                  <a class="btn btn-secondary" href="/authentication">Login</a>
-              </div>
-          </form>
+            </div>
+          </div>
         </div>
       </div>
     </body>

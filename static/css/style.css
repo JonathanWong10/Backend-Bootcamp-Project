@@ -16,14 +16,6 @@ body {
     padding: 12px;
 }
 
-.login-form {
-    margin: 30px 450px;
-}
-
-.register-form {
-    margin: 0 400px;
-}
-
 .cover {
     display: flex;
     justify-content: center;

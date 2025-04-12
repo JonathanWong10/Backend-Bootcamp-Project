@@ -57,16 +57,16 @@
         <h1>Product</h1>
         <br><br>
 
-        <div class="row">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
             <% product.forEach(product =>{ %>
-              <div class="col-sm-4 mb-5">
-                  <div class="card " style="width: 18rem;">
-                      <img src="<%- product.imgUrl %>" class="card-img-top" alt="...">
-                      <div class="card-body">
+              <div class="col">
+                  <div class="card h-100">
+                      <img src="<%- product.imgUrl %>" class="card-img-top img-fluid" alt="...">
+                      <div class="card-body d-flex flex-column">
                         <p class="card-text"><b><%- product.name %></b></p>
                         <p class="card-text">Price: Rs <%- product.price %></p>
                         <p class="card-text">Stock: <%- product.stock %></p>
-                        <div class="text-center">
+                        <div class="mt-auto text-center">
                           <a type="button" class="btn btn-primary" href="/order/cart/add/<%- product.id %>">Add to Cart</a>
                         </div>
                       </div>
