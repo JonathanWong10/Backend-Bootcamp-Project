@@ -8,6 +8,7 @@ const product_routes = require('./routes/product');
 const admin_routes = require('./routes/admin');
 const authentication_routes = require('./routes/authentication');
 const order_routes = require('./routes/order');
+const review_routes = require('./routes/review');
 
 const bodyParser = require('body-parser');
 
@@ -52,6 +53,7 @@ app.use('/', about_routes);
 app.use('/product', product_routes);
 app.use('/order', order_routes);
 app.use('/authentication', authentication_routes);
+app.use('/reviews', review_routes);
 
 app.get('', function(req, res){
     res.redirect('/product')
