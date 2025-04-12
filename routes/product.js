@@ -106,15 +106,4 @@ router.post('/update-product/:id', async function(req, res){
     res.redirect('/product/admin');
 });
 
-router.get('/about', async function(req, res) {
-    reviews = await Review.find()
-        .populate('user', 'username')
-        .sort({ createdAt: -1 });
-
-    res.render('product/about', {
-        reviews: reviews, // Pass reviews to template
-        user: req.session.user
-    });
-});
-
 module.exports = router;
