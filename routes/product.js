@@ -2,6 +2,7 @@ var express = require('express');
 var session = require('express-session');
 
 Product = require('../models/product');
+Review = require('../models/review')
 
 // Create router object
 var router = express.Router();
@@ -103,6 +104,17 @@ router.post('/update-product/:id', async function(req, res){
   
     product = await Product.findByIdAndUpdate(id, data);
     res.redirect('/product/admin');
+});
+
+router.get('/about', async function(req, res) {
+    reviews = await Review.find()
+        .populate('user', 'username')
+        .sort({ createdAt: -1 });
+
+    res.render('product/about', {
+        reviews: reviews, // Pass reviews to template
+        user: req.session.user
+    });
 });
 
 module.exports = router;
